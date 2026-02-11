@@ -1,0 +1,1229 @@
+{
+  "am": {
+    "cpp": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "Ի՞նչ է ծրագրավորումը",
+          "text": "Ծրագրավորումը գործընթաց է, որի ընթացքում մարդը ստեղծում է հրահանգների հավաքածու՝ համակարգչին ասելու, թե ինչպես լուծել խնդիրներ կամ իրականացնել որոշակի գործողություններ։ Ծրագրավորումը օգնում է ավտոմատացնել աշխատանքը, վերլուծել տվյալներ, ստեղծել խաղեր, ծրագրեր և շատ այլ բաներ։",
+          "example": {
+            "description": "Օրինակ, C++-ում կարող ենք գրել ծրագիր, որը հաշվում է երկու թվերի գումարը։ Այս ծրագիրը համակարգչին ասում է՝ վերցրու երկու թիվ, գումարիր դրանք և տպիր արդյունքը։",
+            "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b;\n    cout << \"Մուտքագրեք երկու թիվ: \";\n    cin >> a >> b;\n    cout << \"Ընդհանուր գումարը = \" << a + b << endl;\n    return 0;\n}"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Hello World",
+          "text": "Տվյալների արտածում C++-ում՝ console-ում տեքստը տեսանելի դարձնելու համար օգտագործվում է `cout`։ Սա ծրագրավորման ամենահիմնական քայլերից է՝ տեսնել արդյունքը։",
+          "example": {
+            "description": "Օրինակ, ծրագիր, որը console-ում տպում է «Hello World»՝ \n օգտագործելով `cout`.",
+            "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Hello World\" << endl;\n    return 0;\n}"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Փոփոխականներ",
+          "text": "Փոփոխականը C++-ում դա անունավորված տարածք է հիշողության մեջ, որտեղ կարող ենք պահել տվյալներ՝ թվեր, տեքստեր կամ ուրիշ տեսակ տվյալներ։ Փոփոխականները թույլ են տալիս ծրագրին «հիշել» արժեքներ և հետագայում օգտագործել դրանք։",
+          "example": {
+            "description": "Օրինակ, ստեղծում ենք ամբողջ թվի (int) փոփոխական՝ `age`, և assign անում 18 արժեքը։",
+            "code": "int age = 18;\ncout << \"Տարիքը՝ \" << age << endl;"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "if պայման",
+          "text": "Պայմանական հայտարարությունները թույլ են տալիս ծրագրին որոշում կայացնել՝ կախված տվյալների արժեքներից։ C++-ում ամենահաճախ օգտագործվողը `if` է։",
+          "example": {
+            "description": "Օրինակ, եթե փոփոխական `age` մեծ կամ հավասար է 18, ապա ծրագիրը տպում է «Մեծահասակ»։",
+            "code": "int age = 20;\nif (age >= 18) {\n    cout << \"Մեծահասակ\" << endl;\n} else {\n    cout << \"Անչափահաս\" << endl;\n}"
+          }
+        },
+        {
+          "id": 2,
+          "title": "else if և տրամաբանական օպերատորներ",
+          "text": "Մենք կարող ենք ստուգել մի քանի պայմաններ միաժամանակ՝ օգտագործելով && (և) կամ || (կամ) նշանները:",
+          "example": {
+            "description": "Ստուգում ենք միջակայքը. արդյոք թիվը գտնվում է 10-ից 20-ի արանքում:",
+            "code": "int num = 15;\nif (num >= 10 && num <= 20) {\n    cout << \"Թիվը միջակայքում է\" << endl;\n} else if (num < 10) {\n    cout << \"Թիվը փոքր է 10-ից\" << endl;\n} else {\n    cout << \"Թիվը մեծ է 20-ից\" << endl;\n}"
+          }
+        },
+        {
+          "id": 3,
+          "title": "Switch կառուցվածք",
+          "text": "Switch-ը հարմար է, երբ պետք է համեմատել մեկ փոփոխականը շատ տարբեր արժեքների հետ:",
+          "example": {
+            "description": "Շաբաթվա օրվա որոշում ըստ թվի:",
+            "code": "int day = 2;\nswitch (day) {\n    case 1: cout << \"Երկուշաբթի\"; break;\n    case 2: cout << \"Երեքշաբթի\"; break;\n    default: cout << \"Այլ օր\";\n}"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "for ցիկլ",
+          "text": "Ցիկլերը թույլ են տալիս ծրագրին կրկնվող գործողություններ կատարել՝ մինչև որոշ պայման բավարար լինի։ C++-ում ամենահաճախ օգտագործվող ցիկլերից մեկն է `for`-ը։",
+          "example": {
+            "description": "Օրինակ, ցիկլը տպում է թվերը 1-ից 5։ Ցիկլի յուրաքանչյուր շրջապտույտում փոփոխական `i` մեծանում է մեկով մինչև հասնի 5-ին։",
+            "code": "for (int i = 1; i <= 5; i++) {\n    cout << i << endl;\n}"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Պարզ Ֆունկցիաներ",
+          "text": "Ֆունկցիաները թույլ են տալիս կոդը վերօգտագործել՝ մի անգամ գրել և շատ անգամ կանչել տարբեր մասերում: Դա բարելավում է ծրագրի կառուցվածքը և հեշտացնում է պահպանությունը։",
+          "example": {
+            "description": "Օրինակ, ստեղծում ենք ֆունկցիա `sum`, որը ստանում է երկու ամբողջ թիվ և վերադարձնում նրանց գումարը։",
+            "code": "int sum(int a, int b) {\n    return a + b;\n}\n\nint main() {\n    int result = sum(5, 3);\n    cout << \"Արդյունքը = \" << result << endl;\n    return 0;\n}"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Void ֆունկցիաներ",
+          "text": "Void տիպի ֆունկցիաները արժեք չեն վերադարձնում, դրանք պարզապես գործողություն են կատարում:",
+          "example": {
+            "description": "Ֆունկցիա, որը տպում է օգտատիրոջ անունը:",
+            "code": "void printName(string name) {\n    cout << \"Անունը՝ \" << name << endl;\n}\n\nint main() {\n    printName(\"Անի\");\n    return 0;\n}"
+          }
+        }
+      ]
+    },
+    "js": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "Ի՞նչ է JavaScript-ը",
+          "text": "JavaScript (JS) — դա ծրագրավորման լեզու է, որը հիմնականում օգտագործվում է վեբ էջերում՝ ինտերակտիվ գործողություններ ստեղծելու, տվյալներ մշակելու և վեբ էջի դինամիկ փոփոխություններ անելու համար։ JS աշխատում է բոլոր ժամանակակից զննարկիչներում և կարող է օգտագործվել նաև սերվերի վրա (Node.js):",
+          "example": {
+            "description": "Օրինակ, ստեղծել ծրագիր, որը հաշվարկում է երկու թվերի գումարը՝ օգտագործելով console.log:",
+            "code": "let a = 5;\nlet b = 3;\nconsole.log('Ընդհանուր գումարը =', a + b);"
+          }
+        },
+        {
+          "id": 2,
+          "title": "JS-ը վեբում",
+          "text": "JS-ը թույլ է տալիս էջում ցուցադրել տեքստ, փոփոխել HTML տարրեր և ինտերակտիվություն ավելացնել:",
+          "example": {
+            "description": "Օրինակ, օգտագործելով `innerHTML`, տեքստը ցուցադրել վեբ էջում:",
+            "code": "document.body.innerHTML = 'Hello World';"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Console-ում տպելը",
+          "text": "JS-ում տվյալների արտածումը console-ում կատարվում է `console.log`-ով: Սա օգտակար է ծրագրի արդյունքները տեսնելու և տեքստ կամ փոփոխականներ արտածելու համար։",
+          "example": {
+            "description": "Օրինակ, տպել Hello World console-ում:",
+            "code": "console.log('Hello World');"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Տվյալների արտածում փոփոխականներով",
+          "text": "Արտածում փոփոխականների արժեքները console-ում՝ տարբեր տվյալների տեսակներով։",
+          "example": {
+            "description": "Օրինակ, տպել անունը և տարիքը console-ում:",
+            "code": "let name = 'Aram';\nlet age = 16;\nconsole.log('Անունը:', name, 'Տարիքը:', age);"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Փոփոխականներ",
+          "text": "Փոփոխականները JS-ում թույլ են տալիս պահպանել տվյալներ, որոնք կարող են լինել թվեր, տեքստեր, լոգիկական արժեքներ կամ օբյեկտներ: Հիմնական բառերը՝ `let`, `const` և `var` օգտագործվում են փոփոխական հայտարարելու համար:",
+          "example": {
+            "description": "Օրինակ, ստեղծել փոփոխականներ՝ `age` և `name`, և console-ում տպել դրանք:",
+            "code": "let age = 18;\nconst name = 'Aram';\nconsole.log('Անունը:', name, ', Տարիքը:', age);"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "if պայման",
+          "text": "JS-ում `if` պայմանները թույլ են տալիս ծրագրին որոշում կայացնել՝ կախված արժեքներից:",
+          "example": {
+            "description": "Օրինակ, ստուգել, արդյոք մարդը մեծահասակ է՝ ըստ տարիքի:",
+            "code": "let age = 20;\nif (age >= 18) {\n    console.log('Մեծահասակ');\n} else {\n    console.log('Անչափահաս');\n}"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Ternary Operator (Կարճ պայման)",
+          "text": "Սա `if...else`-ի ավելի սեղմ տարբերակն է մեկ տողի վրա:",
+          "example": {
+            "description": "Պարզ ստուգում և արժեքի վերագրում:",
+            "code": "let isRainy = true;\nlet action = isRainy ? 'Վերցրու հովանոց' : 'Գնա զբոսնելու';\nconsole.log(action);"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "for ցիկլ",
+          "text": "Ցիկլերը թույլ են տալիս ծրագրին կրկնվող գործողություններ կատարել՝ մինչև որոշ պայման բավարար լինի: JS-ում ամենահաճախ օգտագործվող ցիկլերից մեկն է `for`-ը:",
+          "example": {
+            "description": "Օրինակ, ցիկլը տպում է թվերը 1-ից 5 console-ում:",
+            "code": "for (let i = 1; i <= 5; i++) {\n    console.log(i);\n}"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Ֆունկցիաներ",
+          "text": "JS-ում ֆունկցիաները թույլ են տալիս կոդը վերօգտագործել՝ մի անգամ գրել և կանչել ցանկացած մասում:",
+          "example": {
+            "description": "Օրինակ, ստեղծել ֆունկցիա `sum`, որը գումարում է երկու թիվ:",
+            "code": "function sum(a, b) {\n    return a + b;\n}\n\nlet result = sum(5, 3);\nconsole.log('Արդյունքը =', result);"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Arrow Functions (Սլաքով ֆունկցիաներ)",
+          "text": "Ժամանակակից JavaScript-ում օգտագործվող ավելի կարճ գրելաձև:",
+          "example": {
+            "description": "Թվի քառակուսին հաշվող ֆունկցիա:",
+            "code": "const square = (n) => n * n;\nconsole.log(square(4)); // 16"
+          }
+        }
+      ]
+    },
+    "python": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "Ի՞նչ է Python-ը",
+          "text": "Python-ը բարձր մակարդակի, ինտերպրետացվող ծրագրավորման լեզու է, որը հեշտ է սովորել և լայնորեն օգտագործվում է վեբ, տվյալների վերլուծություն, մեքենայական ուսուցում, ավտոմատացում և շատ այլ ոլորտներում:",
+          "example": {
+            "description": "Օրինակ, տպել պարզ տեքստ console-ում՝ օգտագործելով `print` ֆունկցիան:",
+            "code": "print('Hello World')"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Python-ի կիրառումը",
+          "text": "Python-ը թույլ է տալիս ստեղծել պարզ և մաքուր կոդ, աշխատել ֆայլերի հետ, հաշվարկներ կատարել և վեբ հավելվածներ մշակել:",
+          "example": {
+            "description": "Օրինակ, փոփոխականների միջոցով console-ում տպել անուն և տարիքը:",
+            "code": "name = 'Aram'\nage = 16\nprint('Անունը:', name, 'Տարիքը:', age)"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Console-ում տպելը",
+          "text": "Python-ում տվյալների արտածումը console-ում կատարվում է `print` ֆունկցիայով: Սա ծրագրի արդյունքները տեսնելու ամենահեշտ միջոցն է:",
+          "example": {
+            "description": "Օրինակ, տպել Hello World console-ում:",
+            "code": "print('Hello World')"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Տվյալների արտածում փոփոխականներով",
+          "text": "Արտածում փոփոխականների արժեքները console-ում՝ տեքստերի և թվերի համադրությամբ:",
+          "example": {
+            "description": "Օրինակ, տպել անունը և տարիքը console-ում:",
+            "code": "name = 'Aram'\nage = 16\nprint('Անունը:', name, 'Տարիքը:', age)"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Փոփոխականներ",
+          "text": "Փոփոխականները Python-ում օգտագործվում են տվյալների պահման համար: Python-ում փոփոխական հայտարարելու համար հարկ չկա հատուկ տիպ նշել, լեզուն ավտոմատ կհասկանա տիպը:",
+          "example": {
+            "description": "Օրինակ, ստեղծել երկու փոփոխական՝ age և name, և console-ում տպել դրանք:",
+            "code": "age = 18\nname = 'Aram'\nprint('Անունը:', name, ', Տարիքը:', age)"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "if պայման",
+          "text": "Python-ում if պայմանները թույլ են տալիս ծրագրին որոշում կայացնել՝ կախված արժեքներից: Կարելի է օգտագործել նաև elif և else:",
+          "example": {
+            "description": "Օրինակ, ստուգել, արդյոք մարդը մեծահասակ է՝ ըստ տարիքի:",
+            "code": "age = 20\nif age >= 18:\n    print('Մեծահասակ')\nelse:\n    print('Անչափահաս')"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Բազմակի պայմաններ (elif)",
+          "text": "Երբ ունենք ավելի քան երկու հնարավոր տարբերակ:",
+          "example": {
+            "description": "Գնահատականների ստուգում:",
+            "code": "grade = 85\nif grade >= 90:\n    print('Գերազանց')\nelif grade >= 70:\n    print('Լավ')\nelse:\n    print('Բավարար')"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "for ցիկլ",
+          "text": "Ցիկլերը թույլ են տալիս կրկնվող գործողություններ կատարել մինչև որոշ պայման բավարար լինի. Python-ում for ցիկլը հաճախ օգտագործվում է range() ֆունկցիայի հետ:",
+          "example": {
+            "description": "Օրինակ, ցիկլը տպում է թվերը 1-ից 5 console-ում:",
+            "code": "for i in range(1, 6):\n    print(i)"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Ֆունկցիաներ",
+          "text": "Python-ում ֆունկցիաները թույլ են տալիս կոդը վերօգտագործել, ստանալ արգումենտներ և վերադարձնել արժեքներ:",
+          "example": {
+            "description": "Օրինակ, ստեղծել ֆունկցիա sum, որը գումարում է երկու թիվ:",
+            "code": "def sum(a, b):\n    return a + b\n\nresult = sum(5, 3)\nprint('Արդյունքը =', result)"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Լռելյայն արժեքներ (Default values)",
+          "text": "Ֆունկցիայի արգումենտները կարող են ունենալ նախնական արժեքներ:",
+          "example": {
+            "description": "Ողջույնի ֆունկցիա, որտեղ անունը պարտադիր չէ:",
+            "code": "def greet(name='Ընկեր'):\n    print('Բարև, ' + name)\n\ngreet('Աննա') # Բարև, Աննա\ngreet() # Բարև, Ընկեր"
+          }
+        }
+      ]
+    },
+    "php": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "Ի՞նչ է PHP-ը",
+          "text": "PHP (Hypertext Preprocessor) — սերվերային ծրագրավորման լեզու է, որը հիմնականում օգտագործվում է վեբ հավելվածների և դինամիկ վեբ էջերի ստեղծման համար. այն ինտեգրվում է HTML-ի հետ և աշխատում է վեբ սերվերում:",
+          "example": {
+            "description": "Օրինակ, տպել պարզ տեքստ web էջում console կամ բրաուզերում՝ օգտագործելով `echo` ֆունկցիան:",
+            "code": "<?php\necho 'Hello World';\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "PHP-ն վեբում",
+          "text": "PHP-ը թույլ է տալիս ստեղծել ինտերակտիվ վեբ էջեր, մշակել տվյալների բազաներ և ստեղծել բարդ վեբ հավելվածներ:",
+          "example": {
+            "description": "Օրինակ, տպել անունը և տարիքը web էջում՝ օգտագործելով փոփոխականներ և `echo`:",
+            "code": "<?php\n$name = 'Aram';\n$age = 16;\necho 'Անունը: ' . $name . ', Տարիքը: ' . $age;\n?>"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Տպելը web-ում",
+          "text": "PHP-ում տվյալների արտածումը web էջում կատարվում է `echo` կամ `print` ֆունկցիաներով:",
+          "example": {
+            "description": "Օրինակ, տպել Hello World web էջում:",
+            "code": "<?php\necho 'Hello World';\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Տվյալների արտածում փոփոխականներով",
+          "text": "Տպել փոփոխականների արժեքները web էջում՝ միացնելով տեքստ և փոփոխականներ:",
+          "example": {
+            "description": "Օրինակ, տպել անունը և տարիքը web էջում:",
+            "code": "<?php\n$name = 'Aram';\n$age = 16;\necho 'Անունը: ' . $name . ', Տարիքը: ' . $age;\n?>"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Փոփոխականներ",
+          "text": "PHP-ում փոփոխականները սկսվում են `$` նշանով և կարող են պահել թվեր, տեքստեր, լոգիկական արժեքներ և այլն:",
+          "example": {
+            "description": "Օրինակ, ստեղծել փոփոխականներ՝ `$name` և `$age`, և տպել դրանք web էջում:",
+            "code": "<?php\n$name = 'Aram';\n$age = 18;\necho 'Անունը: ' . $name . ', Տարիքը: ' . $age;\n?>"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "if պայման",
+          "text": "PHP-ում if պայմանները թույլ են տալիս ծրագրին որոշում կայացնել՝ կախված փոփոխականների արժեքներից:",
+          "example": {
+            "description": "Օրինակ, ստուգել, արդյոք մարդը մեծահասակ է՝ ըստ տարիքի:",
+            "code": "<?php\n$age = 20;\nif ($age >= 18) {\n    echo 'Մեծահասակ';\n} else {\n    echo 'Անչափահաս';\n}\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Խիստ համեմատություն (===)",
+          "text": "PHP-ում `===` ստուգում է ոչ միայն արժեքը, այլև տվյալի տիպը (թիվ է, թե տեքստ):",
+          "example": {
+            "description": "Համեմատել թիվը և տեքստային թիվը:",
+            "code": "<?php\n$num = 5;\nif ($num === \"5\") {\n    echo \"Նույնն են\";\n} else {\n    echo \"Տարբեր են\"; // Կտպի սա, որովհետև տիպերը տարբեր են\n}\n?>"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "for ցիկլ",
+          "text": "PHP-ում for ցիկլերը թույլ են տալիս կրկնվող գործողություններ կատարել՝ մինչև որոշ պայման բավարար լինի:",
+          "example": {
+            "description": "Օրինակ, ցիկլը տպում է թվերը 1-ից 5 web էջում:",
+            "code": "<?php\nfor ($i = 1; $i <= 5; $i++) {\n    echo $i . '<br>';\n}\n?>"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Ֆունկցիաներ",
+          "text": "PHP-ում ֆունկցիաները թույլ են տալիս կոդը վերօգտագործել, ստանալ արգումենտներ և վերադարձնել արժեքներ:",
+          "example": {
+            "description": "Օրինակ, ստեղծել ֆունկցիա `sum`, որը գումարում է երկու թիվ:",
+            "code": "<?php\nfunction sum($a, $b) {\n    return $a + $b;\n}\n\n$result = sum(5, 3);\necho 'Արդյունքը = ' . $result;\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Ֆունկցիաներ HTML-ի մեջ",
+          "text": "Ֆունկցիաները կարող են օգնել դինամիկ գեներացնել HTML տարրեր:",
+          "example": {
+            "description": "Ֆունկցիա, որը ստեղծում է վերնագիր:",
+            "code": "<?php\nfunction makeHeader($text) {\n    echo \"<h1>$text</h1>\";\n}\n\nmakeHeader(\"Բարի գալուստ\");\n?>"
+          }
+        }
+      ]
+    }
+  },
+  "en": {
+    "cpp": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "What is Programming",
+          "text": "Programming is the process where a person creates a set of instructions to tell the computer how to solve problems or perform specific actions. Programming helps automate work, analyze data, create games, applications, and many other things.",
+          "example": {
+            "description": "For example, in C++, we can write a program that calculates the sum of two numbers. This program tells the computer: take two numbers, add them, and print the result.",
+            "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b;\n    cout << \"Enter two numbers: \";\n    cin >> a >> b;\n    cout << \"Total sum = \" << a + b << endl;\n    return 0;\n}"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Hello World",
+          "text": "Outputting data in C++: to make text visible in the console, `cout` is used. This is one of the most basic steps in programming: seeing the result.",
+          "example": {
+            "description": "For example, a program that prints \"Hello World\" in the console using `cout`.",
+            "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Hello World\" << endl;\n    return 0;\n}"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Variables",
+          "text": "A variable in C++ is a named area in memory where we can store data such as numbers, text, or other types of information. Variables allow the program to \"remember\" values and use them later.",
+          "example": {
+            "description": "For example, we create an integer (int) variable named `age` and assign it the value 18.",
+            "code": "int age = 18;\ncout << \"Age: \" << age << endl;"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "if condition",
+          "text": "Conditional statements allow the program to make decisions based on data values. The most commonly used one in C++ is `if`.",
+          "example": {
+            "description": "For example, if the variable `age` is greater than or equal to 18, the program prints \"Adult\".",
+            "code": "int age = 20;\nif (age >= 18) {\n    cout << \"Adult\" << endl;\n} else {\n    cout << \"Minor\" << endl;\n}"
+          }
+        },
+        {
+          "id": 2,
+          "title": "else if and logical operators",
+          "text": "We can check multiple conditions simultaneously using the && (and) or || (or) symbols.",
+          "example": {
+            "description": "Checking a range: whether the number is between 10 and 20.",
+            "code": "int num = 15;\nif (num >= 10 && num <= 20) {\n    cout << \"The number is in the range\" << endl;\n} else if (num < 10) {\n    cout << \"The number is less than 10\" << endl;\n} else {\n    cout << \"The number is greater than 20\" << endl;\n}"
+          }
+        },
+        {
+          "id": 3,
+          "title": "Switch structure",
+          "text": "Switch is convenient when you need to compare a single variable against many different values.",
+          "example": {
+            "description": "Determining the day of the week by a number.",
+            "code": "int day = 2;\nswitch (day) {\n    case 1: cout << \"Monday\"; break;\n    case 2: cout << \"Tuesday\"; break;\n    default: cout << \"Other day\";\n}"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "for loop",
+          "text": "Loops allow the program to perform repeating actions until a certain condition is met. One of the most frequently used loops in C++ is `for`.",
+          "example": {
+            "description": "For example, the loop prints numbers from 1 to 5. In each iteration, the variable `i` increases by one until it reaches 5.",
+            "code": "for (int i = 1; i <= 5; i++) {\n    cout << i << endl;\n}"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Simple Functions",
+          "text": "Functions allow code reuse: write once and call many times in different parts. This improves program structure and simplifies maintenance.",
+          "example": {
+            "description": "For example, we create a function `sum` that takes two integers and returns their sum.",
+            "code": "int sum(int a, int b) {\n    return a + b;\n}\n\nint main() {\n    int result = sum(5, 3);\n    cout << \"Result = \" << result << endl;\n    return 0;\n}"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Void functions",
+          "text": "Void type functions do not return a value; they simply perform an action.",
+          "example": {
+            "description": "A function that prints the user's name.",
+            "code": "void printName(string name) {\n    cout << \"Name: \" << name << endl;\n}\n\nint main() {\n    printName(\"Ani\");\n    return 0;\n}"
+          }
+        }
+      ]
+    },
+    "js": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "What is JavaScript",
+          "text": "JavaScript (JS) is a programming language primarily used in web pages to create interactive actions, process data, and make dynamic changes to the web page. JS works in all modern browsers and can also be used on the server (Node.js).",
+          "example": {
+            "description": "For example, create a program that calculates the sum of two numbers using console.log:",
+            "code": "let a = 5;\nlet b = 3;\nconsole.log('Total sum =', a + b);"
+          }
+        },
+        {
+          "id": 2,
+          "title": "JS on the Web",
+          "text": "JS allows you to display text on a page, modify HTML elements, and add interactivity.",
+          "example": {
+            "description": "For example, using `innerHTML` to display text on the web page:",
+            "code": "document.body.innerHTML = 'Hello World';"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Printing to Console",
+          "text": "In JS, outputting data to the console is done with `console.log`. This is useful for seeing program results and outputting text or variables.",
+          "example": {
+            "description": "For example, print Hello World to the console:",
+            "code": "console.log('Hello World');"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Outputting Data with Variables",
+          "text": "Outputting variable values to the console with different data types.",
+          "example": {
+            "description": "For example, print name and age to the console:",
+            "code": "let name = 'Aram';\nlet age = 16;\nconsole.log('Name:', name, 'Age:', age);"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Variables",
+          "text": "Variables in JS allow storing data, which can be numbers, text, boolean values, or objects. The main keywords `let`, `const`, and `var` are used to declare variables.",
+          "example": {
+            "description": "For example, create variables `age` and `name` and print them to the console:",
+            "code": "let age = 18;\nconst name = 'Aram';\nconsole.log('Name:', name, ', Age:', age);"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "if condition",
+          "text": "In JS, `if` conditions allow the program to make decisions based on values.",
+          "example": {
+            "description": "For example, check if a person is an adult based on age:",
+            "code": "let age = 20;\nif (age >= 18) {\n    console.log('Adult');\n} else {\n    console.log('Minor');\n}"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Ternary Operator (Shorthand condition)",
+          "text": "This is a more concise version of `if...else` on a single line.",
+          "example": {
+            "description": "Simple check and value assignment:",
+            "code": "let isRainy = true;\nlet action = isRainy ? 'Take an umbrella' : 'Go for a walk';\nconsole.log(action);"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "for loop",
+          "text": "Loops allow the program to perform repeating actions until a certain condition is met. In JS, one of the most frequently used loops is `for`.",
+          "example": {
+            "description": "For example, the loop prints numbers from 1 to 5 to the console:",
+            "code": "for (let i = 1; i <= 5; i++) {\n    console.log(i);\n}"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Functions",
+          "text": "In JS, functions allow code reuse: write once and call in any part of the code.",
+          "example": {
+            "description": "For example, create a function `sum` that adds two numbers:",
+            "code": "function sum(a, b) {\n    return a + b;\n}\n\nlet result = sum(5, 3);\nconsole.log('Result =', result);"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Arrow Functions",
+          "text": "A more concise syntax used in modern JavaScript.",
+          "example": {
+            "description": "A function that calculates the square of a number:",
+            "code": "const square = (n) => n * n;\nconsole.log(square(4)); // 16"
+          }
+        }
+      ]
+    },
+    "python": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "What is Python",
+          "text": "Python is a high-level, interpreted programming language that is easy to learn and widely used in web development, data analysis, machine learning, automation, and many other fields.",
+          "example": {
+            "description": "For example, print simple text to the console using the `print` function:",
+            "code": "print('Hello World')"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Usage of Python",
+          "text": "Python allows creating simple and clean code, working with files, performing calculations, and developing web applications.",
+          "example": {
+            "description": "For example, using variables to print name and age to the console:",
+            "code": "name = 'Aram'\nage = 16\nprint('Name:', name, 'Age:', age)"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Printing to Console",
+          "text": "In Python, outputting data to the console is done with the `print` function. This is the easiest way to see program results.",
+          "example": {
+            "description": "For example, print Hello World to the console:",
+            "code": "print('Hello World')"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Outputting Data with Variables",
+          "text": "Outputting variable values to the console with a combination of text and numbers.",
+          "example": {
+            "description": "For example, print name and age to the console:",
+            "code": "name = 'Aram'\nage = 16\nprint('Name:', name, 'Age:', age)"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Variables",
+          "text": "Variables in Python are used to store data. In Python, there is no need to specify a data type when declaring a variable; the language will understand the type automatically.",
+          "example": {
+            "description": "For example, create two variables, age and name, and print them to the console:",
+            "code": "age = 18\nname = 'Aram'\nprint('Name:', name, ', Age:', age)"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "if condition",
+          "text": "In Python, if conditions allow the program to make decisions based on values. You can also use elif and else.",
+          "example": {
+            "description": "For example, check if a person is an adult based on age:",
+            "code": "age = 20\nif age >= 18:\n    print('Adult')\nelse:\n    print('Minor')"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Multiple conditions (elif)",
+          "text": "When we have more than two possible options.",
+          "example": {
+            "description": "Checking grades:",
+            "code": "grade = 85\nif grade >= 90:\n    print('Excellent')\nelif grade >= 70:\n    print('Good')\nelse:\n    print('Satisfactory')"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "for loop",
+          "text": "Loops allow performing repeating actions until a certain condition is met. In Python, the for loop is often used with the range() function.",
+          "example": {
+            "description": "For example, the loop prints numbers from 1 to 5 to the console:",
+            "code": "for i in range(1, 6):\n    print(i)"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Functions",
+          "text": "In Python, functions allow code reuse, taking arguments, and returning values.",
+          "example": {
+            "description": "For example, create a function `sum` that adds two numbers:",
+            "code": "def sum(a, b):\n    return a + b\n\nresult = sum(5, 3)\nprint('Result =', result)"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Default values",
+          "text": "Function arguments can have initial default values.",
+          "example": {
+            "description": "Greeting function where name is not required:",
+            "code": "def greet(name='Friend'):\n    print('Hello, ' + name)\n\ngreet('Anna') # Hello, Anna\ngreet() # Hello, Friend"
+          }
+        }
+      ]
+    },
+    "php": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "What is PHP",
+          "text": "PHP (Hypertext Preprocessor) is a server-side programming language primarily used for creating web applications and dynamic web pages; it integrates with HTML and runs on a web server.",
+          "example": {
+            "description": "For example, print simple text on a web page or in the console using the `echo` function:",
+            "code": "<?php\necho 'Hello World';\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "PHP on the Web",
+          "text": "PHP allows you to create interactive web pages, process databases, and develop complex web applications.",
+          "example": {
+            "description": "For example, print name and age on a web page using variables and `echo`:",
+            "code": "<?php\n$name = 'Aram';\n$age = 16;\necho 'Name: ' . $name . ', Age: ' . $age;\n?>"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Printing on Web",
+          "text": "In PHP, outputting data on a web page is done with `echo` or `print` functions.",
+          "example": {
+            "description": "For example, print Hello World on a web page:",
+            "code": "<?php\necho 'Hello World';\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Outputting Data with Variables",
+          "text": "Printing variable values on a web page by combining text and variables.",
+          "example": {
+            "description": "For example, print name and age on a web page:",
+            "code": "<?php\n$name = 'Aram';\n$age = 16;\necho 'Name: ' . $name . ', Age: ' . $age;\n?>"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Variables",
+          "text": "In PHP, variables start with the `$` sign and can store numbers, text, boolean values, etc.",
+          "example": {
+            "description": "For example, create variables `$name` and `$age` and print them on a web page:",
+            "code": "<?php\n$name = 'Aram';\n$age = 18;\necho 'Name: ' . $name . ', Age: ' . $age;\n?>"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "if condition",
+          "text": "In PHP, if conditions allow the program to make decisions based on variable values.",
+          "example": {
+            "description": "For example, check if a person is an adult based on age:",
+            "code": "<?php\n$age = 20;\nif ($age >= 18) {\n    echo 'Adult';\n} else {\n    echo 'Minor';\n}\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Strict Comparison (===)",
+          "text": "In PHP, `===` checks not only the value but also the data type (whether it is a number or text).",
+          "example": {
+            "description": "Comparing a number and a string number:",
+            "code": "<?php\n$num = 5;\nif ($num === \"5\") {\n    echo \"They are the same\";\n} else {\n    echo \"They are different\"; // This will print because types are different\n}\n?>"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "for loop",
+          "text": "In PHP, for loops allow performing repeating actions until a certain condition is met.",
+          "example": {
+            "description": "For example, the loop prints numbers from 1 to 5 on a web page:",
+            "code": "<?php\nfor ($i = 1; $i <= 5; $i++) {\n    echo $i . '<br>';\n}\n?>"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Functions",
+          "text": "In PHP, functions allow code reuse, taking arguments, and returning values.",
+          "example": {
+            "description": "For example, create a function `sum` that adds two numbers:",
+            "code": "<?php\nfunction sum($a, $b) {\n    return $a + $b;\n}\n\n$result = sum(5, 3);\necho 'Result = ' . $result;\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Functions in HTML",
+          "text": "Functions can help dynamically generate HTML elements.",
+          "example": {
+            "description": "A function that creates a header:",
+            "code": "<?php\nfunction makeHeader($text) {\n    echo \"<h1>$text</h1>\";\n}\n\nmakeHeader(\"Welcome\");\n?>"
+          }
+        }
+      ]
+    }
+  },
+  "ru": {
+    "cpp": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "Что такое программирование",
+          "text": "Программирование — это процесс, в ходе которого человек создает набор инструкций, чтобы сказать компьютеру, как решать задачи или выполнять определенные действия. Программирование помогает автоматизировать работу, анализировать данные, создавать игры, программы и многое другое.",
+          "example": {
+            "description": "Например, на C++ мы можем написать программу, которая вычисляет сумму двух чисел. Эта программа говорит компьютеру: возьми два числа, сложи их и напечатай результат.",
+            "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b;\n    cout << \"Введите два числа: \";\n    cin >> a >> b;\n    cout << \"Общая сумма = \" << a + b << endl;\n    return 0;\n}"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Hello World",
+          "text": "Вывод данных в C++: чтобы сделать текст видимым в консоли, используется `cout`. Это один из самых базовых шагов в программировании — увидеть результат.",
+          "example": {
+            "description": "Например, программа, которая печатает «Hello World» в консоли, используя `cout`.",
+            "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Hello World\" << endl;\n    return 0;\n}"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Переменные",
+          "text": "Переменная в C++ — это именованная область в памяти, где мы можем хранить данные: числа, текст или другие типы данных. Переменные позволяют программе «запоминать» значения и использовать их в дальнейшем.",
+          "example": {
+            "description": "Например, создаем целочисленную (int) переменную `age` и присваиваем ей значение 18.",
+            "code": "int age = 18;\ncout << \"Возраст: \" << age << endl;"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "Условие if",
+          "text": "Условные операторы позволяют программе принимать решения в зависимости от значений данных. В C++ чаще всего используется `if`.",
+          "example": {
+            "description": "Например, если переменная `age` больше или равна 18, программа выводит «Взрослый».",
+            "code": "int age = 20;\nif (age >= 18) {\n    cout << \"Взрослый\" << endl;\n} else {\n    cout << \"Несовершеннолетний\" << endl;\n}"
+          }
+        },
+        {
+          "id": 2,
+          "title": "else if и логические операторы",
+          "text": "Мы можем проверять несколько условий одновременно, используя символы && (и) или || (или).",
+          "example": {
+            "description": "Проверка диапазона: находится ли число между 10 и 20.",
+            "code": "int num = 15;\nif (num >= 10 && num <= 20) {\n    cout << \"Число в диапазоне\" << endl;\n} else if (num < 10) {\n    cout << \"Число меньше 10\" << endl;\n} else {\n    cout << \"Число больше 20\" << endl;\n}"
+          }
+        },
+        {
+          "id": 3,
+          "title": "Конструкция Switch",
+          "text": "Switch удобен, когда нужно сравнить одну переменную с множеством разных значений.",
+          "example": {
+            "description": "Определение дня недели по числу.",
+            "code": "int day = 2;\nswitch (day) {\n    case 1: cout << \"Понедельник\"; break;\n    case 2: cout << \"Вторник\"; break;\n    default: cout << \"Другой день\";\n}"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "Цикл for",
+          "text": "Циклы позволяют программе выполнять повторяющиеся действия до тех пор, пока соблюдается определенное условие. В C++ один из самых популярных циклов — `for`.",
+          "example": {
+            "description": "Например, цикл выводит числа от 1 до 5. На каждом шаге переменная `i` увеличивается на один, пока не достигнет 5.",
+            "code": "for (int i = 1; i <= 5; i++) {\n    cout << i << endl;\n}"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Простые функции",
+          "text": "Функции позволяют повторно использовать код: написать один раз и вызывать многократно в разных частях. Это улучшает структуру программы и облегчает её поддержку.",
+          "example": {
+            "description": "Например, создаем функцию `sum`, которая принимает два целых числа и возвращает их сумму.",
+            "code": "int sum(int a, int b) {\n    return a + b;\n}\n\nint main() {\n    int result = sum(5, 3);\n    cout << \"Результат = \" << result << endl;\n    return 0;\n}"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Функции типа Void",
+          "text": "Функции типа void не возвращают значения, они просто выполняют действие.",
+          "example": {
+            "description": "Функция, которая печатает имя пользователя.",
+            "code": "void printName(string name) {\n    cout << \"Имя: \" << name << endl;\n}\n\nint main() {\n    printName(\"Ани\");\n    return 0;\n}"
+          }
+        }
+      ]
+    },
+    "js": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "Что такое JavaScript",
+          "text": "JavaScript (JS) — это язык программирования, который в основном используется на веб-страницах для создания интерактивных действий, обработки данных и динамического изменения контента. JS работает во всех современных браузерах и может использоваться на сервере (Node.js).",
+          "example": {
+            "description": "Например, создать программу, которая вычисляет сумму двух чисел с помощью console.log:",
+            "code": "let a = 5;\nlet b = 3;\nconsole.log('Общая сумма =', a + b);"
+          }
+        },
+        {
+          "id": 2,
+          "title": "JS в вебе",
+          "text": "JS позволяет отображать текст на странице, изменять элементы HTML и добавлять интерактивность.",
+          "example": {
+            "description": "Например, используя `innerHTML`, вывести текст на веб-страницу:",
+            "code": "document.body.innerHTML = 'Hello World';"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Вывод в консоль",
+          "text": "В JS вывод данных в консоль осуществляется с помощью `console.log`. Это полезно для просмотра результатов работы программы и отладки.",
+          "example": {
+            "description": "Например, напечатать Hello World в консоли:",
+            "code": "console.log('Hello World');"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Вывод данных с переменными",
+          "text": "Вывод значений переменных в консоль с разными типами данных.",
+          "example": {
+            "description": "Например, напечатать имя и возраст в консоли:",
+            "code": "let name = 'Aram';\nlet age = 16;\nconsole.log('Имя:', name, 'Возраст:', age);"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Переменные",
+          "text": "Переменные в JS позволяют хранить данные: числа, текст, логические значения или объекты. Основные ключевые слова `let`, `const` и `var` используются для объявления переменных.",
+          "example": {
+            "description": "Например, создать переменные `age` и `name` и вывести их в консоль:",
+            "code": "let age = 18;\nconst name = 'Aram';\nconsole.log('Имя:', name, ', Возраст:', age);"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "Условие if",
+          "text": "В JS условия `if` позволяют программе принимать решения на основе значений.",
+          "example": {
+            "description": "Например, проверить, является ли человек взрослым по возрасту:",
+            "code": "let age = 20;\nif (age >= 18) {\n    console.log('Взрослый');\n} else {\n    console.log('Несовершеннолетний');\n}"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Тернарный оператор (Краткое условие)",
+          "text": "Это более сжатая версия `if...else` в одну строку.",
+          "example": {
+            "description": "Простая проверка и присваивание значения:",
+            "code": "let isRainy = true;\nlet action = isRainy ? 'Возьми зонт' : 'Иди гулять';\nconsole.log(action);"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "Цикл for",
+          "text": "Циклы позволяют выполнять повторяющиеся действия. В JS один из самых часто используемых — `for`.",
+          "example": {
+            "description": "Например, цикл выводит числа от 1 до 5 в консоль:",
+            "code": "for (let i = 1; i <= 5; i++) {\n    console.log(i);\n}"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Функции",
+          "text": "В JS функции позволяют повторно использовать код: написать один раз и вызывать в любой части программы.",
+          "example": {
+            "description": "Например, создать функцию `sum`, которая складывает два числа:",
+            "code": "function sum(a, b) {\n    return a + b;\n}\n\nlet result = sum(5, 3);\nconsole.log('Результат =', result);"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Стрелочные функции",
+          "text": "Более современный и краткий синтаксис функций в JavaScript.",
+          "example": {
+            "description": "Функция, вычисляющая квадрат числа:",
+            "code": "const square = (n) => n * n;\nconsole.log(square(4)); // 16"
+          }
+        }
+      ]
+    },
+    "python": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "Что такое Python",
+          "text": "Python — это высокоуровневый интерпретируемый язык программирования, который легко изучать и который широко используется в вебе, анализе данных, машинном обучении, автоматизации и многих других областях.",
+          "example": {
+            "description": "Например, напечатать простой текст в консоли с помощью функции `print`:",
+            "code": "print('Hello World')"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Применение Python",
+          "text": "Python позволяет создавать простой и чистый код, работать с файлами, выполнять расчеты и разрабатывать веб-приложения.",
+          "example": {
+            "description": "Например, с помощью переменных вывести имя и возраст в консоль:",
+            "code": "name = 'Aram'\nage = 16\nprint('Имя:', name, 'Возраст:', age)"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Вывод в консоль",
+          "text": "В Python вывод данных в консоль осуществляется с помощью функции `print`. Это самый простой способ увидеть результат работы программы.",
+          "example": {
+            "description": "Например, напечатать Hello World в консоли:",
+            "code": "print('Hello World')"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Вывод данных с переменными",
+          "text": "Вывод значений переменных в консоль с сочетанием текста и чисел.",
+          "example": {
+            "description": "Например, напечатать имя и возраст в консоли:",
+            "code": "name = 'Aram'\nage = 16\nprint('Имя:', name, 'Возраст:', age)"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Переменные",
+          "text": "Переменные в Python используются для хранения данных. В Python не нужно указывать тип данных при объявлении переменной; язык поймет тип автоматически.",
+          "example": {
+            "description": "Например, создать две переменные: age и name, и вывести их в консоль:",
+            "code": "age = 18\nname = 'Aram'\nprint('Имя:', name, ', Возраст:', age)"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "Условие if",
+          "text": "В Python условия if позволяют программе принимать решения. Можно также использовать elif и else.",
+          "example": {
+            "description": "Например, проверить, является ли человек взрослым по возрасту:",
+            "code": "age = 20\nif age >= 18:\n    print('Взрослый')\nelse:\n    print('Несовершеннолетний')"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Множественные условия (elif)",
+          "text": "Когда есть более двух возможных вариантов развития событий.",
+          "example": {
+            "description": "Проверка оценок:",
+            "code": "grade = 85\nif grade >= 90:\n    print('Отлично')\nelif grade >= 70:\n    print('Хорошо')\nelse:\n    print('Удовлетворительно')"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "Цикл for",
+          "text": "Циклы позволяют выполнять повторяющиеся действия. В Python цикл for часто используется с функцией range().",
+          "example": {
+            "description": "Например, цикл выводит числа от 1 до 5 в консоль:",
+            "code": "for i in range(1, 6):\n    print(i)"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Функции",
+          "text": "В Python функции позволяют повторно использовать код, принимать аргументы и возвращать значения.",
+          "example": {
+            "description": "Например, создать функцию sum, которая складывает два числа:",
+            "code": "def sum(a, b):\n    return a + b\n\nresult = sum(5, 3)\nprint('Результат =', result)"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Значения по умолчанию",
+          "text": "Аргументы функции могут иметь начальные значения по умолчанию.",
+          "example": {
+            "description": "Функция приветствия, где имя не обязательно:",
+            "code": "def greet(name='Друг'):\n    print('Привет, ' + name)\n\ngreet('Анна') # Привет, Анна\ngreet() # Привет, Друг"
+          }
+        }
+      ]
+    },
+    "php": {
+      "intro": [
+        {
+          "id": 1,
+          "title": "Что такое PHP",
+          "text": "PHP (Hypertext Preprocessor) — это серверный язык программирования, в основном используемый для создания веб-приложений и динамических страниц; он интегрируется в HTML и работает на веб-сервере.",
+          "example": {
+            "description": "Например, вывести простой текст на веб-страницу с помощью функции `echo`:",
+            "code": "<?php\necho 'Hello World';\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "PHP в вебе",
+          "text": "PHP позволяет создавать интерактивные страницы, работать с базами данных и разрабатывать сложные веб-приложения.",
+          "example": {
+            "description": "Например, вывести имя и возраст на страницу, используя переменные и `echo`:",
+            "code": "<?php\n$name = 'Aram';\n$age = 16;\necho 'Имя: ' . $name . ', Возраст: ' . $age;\n?>"
+          }
+        }
+      ],
+      "prints": [
+        {
+          "id": 1,
+          "title": "Вывод в вебе",
+          "text": "В PHP вывод данных на веб-страницу осуществляется с помощью функций `echo` или `print`.",
+          "example": {
+            "description": "Например, напечатать Hello World на странице:",
+            "code": "<?php\necho 'Hello World';\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Вывод данных с переменными",
+          "text": "Вывод значений переменных на веб-страницу путем соединения текста и переменных.",
+          "example": {
+            "description": "Например, напечатать имя и возраст на странице:",
+            "code": "<?php\n$name = 'Aram';\n$age = 16;\necho 'Имя: ' . $name . ', Возраст: ' . $age;\n?>"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "id": 1,
+          "title": "Переменные",
+          "text": "В PHP переменные начинаются со знака `$` и могут хранить числа, текст, логические значения и т.д.",
+          "example": {
+            "description": "Например, создать переменные `$name` и `$age` и вывести их на веб-страницу:",
+            "code": "<?php\n$name = 'Aram';\n$age = 18;\necho 'Имя: ' . $name . ', Возраст: ' . $age;\n?>"
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "id": 1,
+          "title": "Условие if",
+          "text": "В PHP условия if позволяют программе принимать решения на основе значений переменных.",
+          "example": {
+            "description": "Например, проверить, является ли человек взрослым по возрасту:",
+            "code": "<?php\n$age = 20;\nif ($age >= 18) {\n    echo 'Взрослый';\n} else {\n    echo 'Несовершеннолетний';\n}\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Строгое сравнение (===)",
+          "text": "В PHP `===` проверяет не только значение, но и тип данных (число это или текст).",
+          "example": {
+            "description": "Сравнение числа и текстового числа:",
+            "code": "<?php\n$num = 5;\nif ($num === \"5\") {\n    echo \"Одинаковые\";\n} else {\n    echo \"Разные\"; // Выведет это, так как типы разные\n}\n?>"
+          }
+        }
+      ],
+      "loops": [
+        {
+          "id": 1,
+          "title": "Цикл for",
+          "text": "В PHP циклы for позволяют выполнять повторяющиеся действия до выполнения условия.",
+          "example": {
+            "description": "Например, цикл выводит числа от 1 до 5 на веб-страницу:",
+            "code": "<?php\nfor ($i = 1; $i <= 5; $i++) {\n    echo $i . '<br>';\n}\n?>"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "id": 1,
+          "title": "Функции",
+          "text": "В PHP функции позволяют повторно использовать код, принимать аргументы и возвращать значения.",
+          "example": {
+            "description": "Например, создать функцию `sum`, которая складывает два числа:",
+            "code": "<?php\nfunction sum($a, $b) {\n    return $a + $b;\n}\n\n$result = sum(5, 3);\necho 'Результат = ' . $result;\n?>"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Функции внутри HTML",
+          "text": "Функции могут помогать динамически генерировать HTML-элементы.",
+          "example": {
+            "description": "Функция, которая создает заголовок:",
+            "code": "<?php\nfunction makeHeader($text) {\n    echo \"<h1>$text</h1>\";\n}\n\nmakeHeader(\"Добро пожаловать\");\n?>"
+          }
+        }
+      ]
+    }
+  }
+}

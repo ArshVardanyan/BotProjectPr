@@ -1,0 +1,80 @@
+{
+  "am": {
+    "start": {
+      "text": "Ողջույն հարգելի ուսանող, ես Ուսուցանող Բոտ եմ։",
+      "list-title": "Ընտրեք որևէ մեկը՝",
+      "list": [
+        [
+          { "text": "Կրթություն", "callback_data": "tutorial" }
+        ]
+      ]
+    },
+    "tutorial": {
+      "text": "Ընտրել ծրագրավորման լեզուն՝",
+      "topicTexts": "Ծրագրավրման լեզու"
+    },
+    "segments": {
+      "text": "Ընտրել բաժինը՝",
+      "segmentItems": {
+        "intro": "Ներածություն",
+        "prints": "Տպիչներ",
+        "variables": "Փոփոխականներ",
+        "conditions": "Պայմաններ",
+        "loops": "Ցիկլեր",
+        "functions": "Ֆունկցիաներ"
+      }
+    }
+  },
+  "en": {
+    "start": {
+      "text": "Hello dear student, I am the Teaching Bot.",
+      "list-title": "Please select one:",
+      "list": [
+        [
+          { "text": "Education", "callback_data": "tutorial" }
+        ]
+      ]
+    },
+    "tutorial": {
+      "text": "Select the programming language:",
+      "topicTexts": "Programming language"
+    },
+    "segments": {
+      "text": "Select the section:",
+      "segmentItems": {
+        "intro": "Introduction",
+        "prints": "Prints",
+        "variables": "Variables",
+        "conditions": "Conditions",
+        "loops": "Loops",
+        "functions": "Functions"
+      }
+    }
+  },
+  "ru": {
+    "start": {
+      "text": "Привет, уважаемый студент, я Учебный Бот.",
+      "list-title": "Пожалуйста, выберите один из вариантов:",
+      "list": [
+        [
+          { "text": "Образование", "callback_data": "tutorial" }
+        ]
+      ]
+    },
+    "tutorial": {
+      "text": "Выберите язык программирования:",
+      "topicTexts": "Язык программирования"
+    },
+    "segments": {
+      "text": "Выберите раздел:",
+      "segmentItems": {
+        "intro": "Введение",
+        "prints": "Печать",
+        "variables": "Переменные",
+        "conditions": "Условия",
+        "loops": "Циклы",
+        "functions": "Функции"
+      }
+    }
+  }
+}
